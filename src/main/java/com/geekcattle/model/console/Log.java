@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import java.util.Date;
 
 /**
  * @author geekcattle
@@ -19,7 +20,7 @@ public class Log  extends BaseEntity {
 
     private String logUser;
 
-    private String logTime;
+    private Date logTime;
 
     private String logIp;
 
@@ -49,11 +50,11 @@ public class Log  extends BaseEntity {
         this.logUser = logUser;
     }
 
-    public String getLogTime() {
+    public Date getLogTime() {
         return logTime;
     }
 
-    public void setLogTime(String logTime) {
+    public void setLogTime(Date logTime) {
         this.logTime = logTime;
     }
 

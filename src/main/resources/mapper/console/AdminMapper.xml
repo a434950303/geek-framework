@@ -8,8 +8,8 @@
       <result column="salt" jdbcType="VARCHAR" property="salt" />
       <result column="state" jdbcType="INTEGER" property="state" />
       <result column="is_system" jdbcType="INTEGER" property="isSystem" />
-      <result column="created_at" jdbcType="DATE" property="createdAt" />
-      <result column="updated_at" jdbcType="DATE" property="updatedAt" />
+      <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+      <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
       <!-- 关联查询角色信息 -->
       <!--<collection property="roleList" resultMap="com.geekcattle.mapper.console.Role">
           <id column="roleid" jdbcType="VARCHAR" property="id" />

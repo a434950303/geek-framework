@@ -34,7 +34,7 @@ public class LogService {
         Log  log = new Log();
         log.setLogId(UuidUtil.getUUID());
         log.setLogUser(username);
-        log.setLogTime(DateUtil.getCurrentTime());
+        log.setLogTime(DateUtil.getSysTime());
         log.setLogIp(ip);
         log.setLogAction(action);
         this.insert(log);

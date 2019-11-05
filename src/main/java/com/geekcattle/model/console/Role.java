@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import javax.validation.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,9 +27,9 @@ public class Role extends BaseEntity {
     @Column(columnDefinition="enum(1,0)")
     private Integer enable;
 
-    private String createdAt;
+    private Date createdAt;
 
-    private String updatedAt;
+    private Date updatedAt;
 
     @Transient
     @JsonIgnore
@@ -83,19 +84,19 @@ public class Role extends BaseEntity {
         this.enable = enable;
     }
 
-    public String getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt() {
+    public Date getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 

@@ -2,10 +2,13 @@ package com.geekcattle.model.console;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.geekcattle.model.BaseEntity;
+import com.geekcattle.util.DateUtil;
 import org.apache.commons.lang3.StringUtils;
+
 import javax.validation.constraints.NotEmpty;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,12 +16,13 @@ import java.util.List;
  */
 public class Admin extends BaseEntity implements Serializable {
 
+    private static final long serialVersionUID = 7539126739028335926L;
     @Id
     @Column(name = "uid")
     @GeneratedValue(generator = "UUID")
     private String uid;
 
-    @NotEmpty(message="账号不能为空")
+    @NotEmpty(message = "账号不能为空")
     private String username;
 
     private String password;
@@ -29,9 +33,10 @@ public class Admin extends BaseEntity implements Serializable {
 
     private Integer isSystem;
 
-    private String createdAt;
+    private Date createdAt;
 
-    private String updatedAt;
+    private Date updatedAt;
+
 
     @Transient
     @JsonIgnore
@@ -95,26 +100,27 @@ public class Admin extends BaseEntity implements Serializable {
         this.isSystem = isSystem;
     }
 
-    public String  getCreatedAt() {
+
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt() {
+    public Date getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 
     public String getSort() {
-        if(StringUtils.isEmpty(sort)){
+        if (StringUtils.isEmpty(sort)) {
             return "createdAt";
-        }else{
+        } else {
             return sort;
         }
     }
@@ -124,9 +130,9 @@ public class Admin extends BaseEntity implements Serializable {
     }
 
     public String getOrder() {
-        if(StringUtils.isEmpty(sort)){
+        if (StringUtils.isEmpty(sort)) {
             return "desc";
-        }else{
+        } else {
             return order;
         }
     }
@@ -137,10 +143,11 @@ public class Admin extends BaseEntity implements Serializable {
 
     /**
      * 密码盐.
+     *
      * @return
      */
-    public String getCredentialsSalt(){
-        return this.username+this.salt;
+    public String getCredentialsSalt() {
+        return this.username + this.salt;
     }
 
     public String[] getRoleId() {

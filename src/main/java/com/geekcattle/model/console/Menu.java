@@ -5,12 +5,14 @@ import com.geekcattle.model.BaseEntity;
 import javax.validation.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 /**
  * @author geekcattle
  */
 public class Menu extends BaseEntity{
+
 
     @Id
     @Column(name = "menu_id")
@@ -38,9 +40,9 @@ public class Menu extends BaseEntity{
 
     private Integer listorder;
 
-    private String createdAt;
+    private Date createdAt;
 
-    private String updatedAt;
+    private Date updatedAt;
 
     @Transient
     private List<Menu> children;
@@ -123,19 +125,19 @@ public class Menu extends BaseEntity{
         this.listorder = listorder;
     }
 
-    public String getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt() {
+    public Date getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 

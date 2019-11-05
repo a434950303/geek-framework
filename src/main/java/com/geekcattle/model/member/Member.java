@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Transient;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,9 +29,9 @@ public class Member extends BaseEntity implements UserDetails {
 
     private Integer state;
 
-    private String createdAt;
+    private Date createdAt;
 
-    private String updatedAt;
+    private Date updatedAt;
 
     @Transient
     @JsonIgnore
@@ -73,21 +74,14 @@ public class Member extends BaseEntity implements UserDetails {
         this.state = state;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
 
     public String getSort() {
         return sort;

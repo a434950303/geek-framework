@@ -48,7 +48,7 @@ spring:
   # 使用druid数据源
   datasource:
     type : com.alibaba.druid.pool.DruidDataSource
-    driver-class-name : com.mysql.cj.jdbc.Driver
+    driver-class-name : org.postgresql.Driver
     dbcp2:
       test-while-idle: false
       validation-query: SELECT 'x'
@@ -182,15 +182,15 @@ ueditor:
 spring:
   profiles: dev
   datasource:
-      name : geekcattle
-      username  : root
-      password  : root
-      url : jdbc:mysql://localhost:3306/geekcattle?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    name: geek
+    url: jdbc:postgresql://rm-2zel917689cge1c7xjo.pg.rds.aliyuncs.com:3432/geek?useUnicode=true&characterEncoding=utf8
+    username: sd
+    password: Xxha123456
   redis:
     database : 0
     host : 127.0.0.1
     port : 6379
-    password : Hao123
+    password :
 
 server:
   port: 8000
@@ -210,7 +210,7 @@ spring:
       database : 0
       host : 127.0.0.1
       port : 6379
-      password : Test123
+      password :
 server:
   port: 8001
 

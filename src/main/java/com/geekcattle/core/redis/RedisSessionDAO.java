@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -65,6 +66,10 @@ public class RedisSessionDAO extends AbstractSessionDAO {
         // 先从缓存中获取session，如果没有再去数据库中获取
         Session session = null;
         if (session == null) {
+            String key = getKey(sessionId.toString());
+            System.out.println(key);
+            ValueOperations<String, Object> stringObjectValueOperations = redisTemplate.opsForValue();
+            Object o = stringObjectValueOperations.get(key);
             session = (Session) redisTemplate.opsForValue().get(getKey(sessionId.toString()));
         }
         return session;

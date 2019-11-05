@@ -74,14 +74,14 @@ public class MenuController {
         if (!StringUtils.isEmpty(menu.getMenuId())) {
             menu = menuService.getById(menu.getMenuId());
             if (!"null".equals(menu)) {
-                menu.setUpdatedAt(DateUtil.getCurrentTime());
+                menu.setUpdatedAt(DateUtil.getSysTime());
             }
         } else {
             menu.setChildNum(0);
             menu.setListorder(0);
             menu.setMenuType("menu");
-            menu.setCreatedAt(DateUtil.getCurrentTime());
-            menu.setUpdatedAt(DateUtil.getCurrentTime());
+            menu.setCreatedAt(DateUtil.getSysTime());
+            menu.setUpdatedAt(DateUtil.getSysTime());
         }
         model.addAttribute("menu", menu);
         return "console/menu/from";

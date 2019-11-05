@@ -60,8 +60,8 @@ public class MemberController {
             String password = passwordEncoder.encode(member.getPassword());
             member.setPassword(password);
             member.setState(1);
-            member.setCreatedAt(DateUtil.getCurrentTime());
-            member.setUpdatedAt(DateUtil.getCurrentTime());
+            member.setCreatedAt(DateUtil.getSysTime());
+            member.setUpdatedAt(DateUtil.getSysTime());
             memberService.insert(member);
             return ReturnUtil.success("操作成功", null, null);
         } catch (Exception e) {

@@ -96,11 +96,11 @@ public class RoleController {
         try {
             if (StringUtils.isEmpty(role.getRoleId())) {
                 role.setRoleId(UuidUtil.getUUID());
-                role.setCreatedAt(DateUtil.getCurrentTime());
-                role.setUpdatedAt(DateUtil.getCurrentTime());
+                role.setCreatedAt(DateUtil.getSysTime());
+                role.setUpdatedAt(DateUtil.getSysTime());
                 roleService.insert(role);
             } else {
-                role.setUpdatedAt(DateUtil.getCurrentTime());
+                role.setUpdatedAt(DateUtil.getSysTime());
                 roleService.save(role);
             }
             // 更新所有用户权限，更严谨的做法是更新与当前角色有关的用户权限

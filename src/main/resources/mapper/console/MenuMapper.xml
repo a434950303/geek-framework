@@ -11,8 +11,8 @@
         <result column="parent_ids" property="parentIds" jdbcType="VARCHAR"/>
         <result column="child_num" property="childNum" jdbcType="INTEGER"/>
         <result column="listorder" property="listorder" jdbcType="INTEGER"/>
-        <result column="created_at" jdbcType="DATE" property="createdAt" />
-        <result column="updated_at" jdbcType="DATE" property="updatedAt" />
+        <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+        <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
     </resultMap>
 
     <!-- 根据用用户ID查询权限code -->

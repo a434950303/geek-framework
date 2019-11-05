@@ -8,6 +8,8 @@ import javax.persistence.*;
  */
 public class BaseEntity  {
 
+    private static final long serialVersionUID = 4125096758372084309L;
+
     @Transient
     private Integer offset = 0;
 

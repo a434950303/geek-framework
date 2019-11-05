@@ -9,4 +9,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface LogMapper extends CustomerMapper<Log> {
+    @Override
+    int insert(Log log);
 }
