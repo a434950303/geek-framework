@@ -193,7 +193,3 @@ PS：测试数据库会不定期恢复。
 5. Apache Licence也是对商业应用友好的许可。使用者也可以在需要的时候修改代码来满足需要并作为开源或商业产品发布/销售
 6. 你可以二次包装出售，**但还请保留文件中的版权和作者信息**，并在你的产品说明中注明SpringBootAdmin。
 7. 你可以以任何方式获得，你可以修改包名或类名，**但还请保留文件中的版权和作者信息**。
-
-## 捐赠支持
-
-![icon](https://github.com/liu-peiyu/Geek-Framework/blob/master/src/main/resources/static/img/pay.jpg?raw=true)
